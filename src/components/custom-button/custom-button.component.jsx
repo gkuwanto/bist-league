@@ -2,9 +2,9 @@ import React from "react";
 
 import "./custom-button.style.scss";
 
-const CustomButton = ({ children, onClick }) => (
-  <div className="input-container">
-    <button onClick={onClick}>{children.toUpperCase()}</button>
+const CustomButton = ({ name, onClick }) => (
+  <div className="button-container">
+    <button onClick={onClick}>{name.toUpperCase()}</button>
   </div>
 );
 

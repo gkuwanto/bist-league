@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import CustomInput from "../../components/custom-input/custom-input.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 
+import "./login.style.scss";
+
 class LoginPage extends React.Component {
   constructor() {
     super();
@@ -34,14 +36,14 @@ class LoginPage extends React.Component {
             label="Password"
             onChange={this.handleText("password")}
           />
+          <Link to="/">Forgot your password?</Link>
           <CustomButton
             onClick={(event) => {
               console.log(this.state);
               event.preventDefault();
             }}
-          >
-            CREATE ACCOUNT
-          </CustomButton>
+            name="login"
+          />
         </form>
         <span>
           Don't have an account ?<Link to="/register">Register</Link>

@@ -76,11 +76,10 @@ class RegisterPage extends React.Component {
           <CustomButton
             onClick={(event) => {
               console.log(this.state);
-              event.preventDefault();
+              event.preventDefault(); // Biar ga ngejalanin actionnya form
             }}
-          >
-            CREATE ACCOUNT
-          </CustomButton>
+            name="CREATE ACCOUNT"
+          />
         </form>
         <Link to="/login">Already have an account?</Link>
       </div>
