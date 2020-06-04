@@ -1,8 +1,11 @@
 import React from "react";
 
-import CustomInput from "../../components/custom-input/custom-input.component";
+import { Link } from "react-router-dom";
 
-class RegisterPage extends React.Component {
+import CustomInput from "../../components/custom-input/custom-input.component";
+import CustomButton from "../../components/custom-button/custom-button.component";
+
+class LoginPage extends React.Component {
   constructor() {
     super();
 
@@ -12,7 +15,7 @@ class RegisterPage extends React.Component {
     };
   }
 
-  handleChange = (field) => (event) => {
+  handleText = (field) => (event) => {
     this.setState({ [field]: event.target.value });
   };
 
@@ -24,25 +27,28 @@ class RegisterPage extends React.Component {
           <CustomInput
             name="email"
             label="email"
-            onChange={this.handleChange("email")}
+            onChange={this.handleText("email")}
           />
           <CustomInput
             name="password"
             label="Password"
-            onChange={this.handleChange("password")}
+            onChange={this.handleText("password")}
           />
-          <button
+          <CustomButton
             onClick={(event) => {
               console.log(this.state);
               event.preventDefault();
             }}
           >
             CREATE ACCOUNT
-          </button>
+          </CustomButton>
         </form>
+        <span>
+          Don't have an account ?<Link to="/register">Register</Link>
+        </span>
       </div>
     );
   }
 }
 
-export default RegisterPage;
+export default LoginPage;
